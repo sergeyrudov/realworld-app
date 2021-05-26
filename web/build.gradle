@@ -1,0 +1,8 @@
+task web(type: Test) {
+  systemProperties = System.properties
+
+  useJUnitPlatform {
+    includeTags 'web'
+  }
+}
+
