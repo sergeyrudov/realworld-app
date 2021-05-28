@@ -9,8 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class MainPage {
-    int count = 0;
-
 
     public SelenideElement globalFeedTab = $(By.xpath("//a[contains(text(),'Global Feed')]"));
 
@@ -46,5 +44,3 @@ public class MainPage {
         return null;
     }
 }
-
-

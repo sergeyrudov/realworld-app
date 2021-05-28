@@ -18,22 +18,24 @@ public class FilterTagTest {
   @Test
   void checkFilteringByTag() throws InterruptedException {
 
-    // check that tab selected 'Global Feed' tap is displayed
-    assertFalse(new MainPage().getPageTitleText().isEmpty(), "Title is empty");
+    MainPage mainPage = new MainPage();
+
+    // check that tab selected title page is not empty
+    assertFalse(mainPage.getPageTitleText().isEmpty(), "Title is empty");
 
     // check that global tab is displayed
-    assertTrue(new MainPage().isGlobalTabDisplayed(), "Global tab is absent");
+    assertTrue(mainPage.isGlobalTabDisplayed(), "Global tab is absent");
 
     // click on #10 from list favorite tags
-    new MainPage().getTagByIndex(10).click();
+    mainPage.getTagByIndex(10).click();
 
     // save tag name
-    String tagName = new MainPage().getTagByIndex(10).text();
+    String tagName = mainPage.getTagByIndex(10).text();
 
     // check that appears tab with selected tag
-    assertFalse(new MainPage().isFavoriteTabDisplayed().isEmpty(), "Article is not selected");
+    assertFalse(mainPage.isFavoriteTabDisplayed().isEmpty(), "Article is not selected");
 
     // check that selected tag from main page is equals to tag on target page
-    assertTrue(new MainPage().searchTagsInList(tagName), "Tag is not find");
+    assertTrue(mainPage.searchTagsInList(tagName), "Tag is not find");
   }
 }
